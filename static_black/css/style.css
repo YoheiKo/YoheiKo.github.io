@@ -107,7 +107,8 @@ footer {
     width: 100%;
     clear: both;
     position: relative;
-    padding-top: 36px;
+    padding-top: 18px;
+    padding-bottom: 18px;
     /* margin-top: -36px; */
     background-color: #F9F8FD;
     color: #929eaa;
