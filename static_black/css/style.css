@@ -50,8 +50,8 @@ body {
 .ch_5__field div {
     flex: 1; /*equal amount of priority */
     padding: 16px;
-    min-height: 196px;
-    height:60%;
+    min-height: 125px;
+    height:100%;
     text-align: center;
 }
 
@@ -102,7 +102,7 @@ td  {
 
 
 footer {
-    min-height: 36px;
+    /* min-height: 36px; */
     height: 15%;
     width: 100%;
     clear: both;
