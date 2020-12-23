@@ -1,0 +1,62 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript on Steroids</title>
+    <link rel="stylesheet" href="static_black/css/style.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="main">
+        <div class="main__ch_5">
+            <h4 id="main__ch_5__title">BLACKJACK</h4>
+            <h5> <span id="ch5_blackjack-result">Let's play</span> </h5>
+            <div class="ch_5__field">
+                <div id="ch_5__field__your-box">
+                    <h5>You: <span id="ch_5__field__your-box__result">0</span></h5>
+                </div>
+                <div id="ch_5__field__dealer-box">
+                    <h5>Dealer: <span id="ch_5__field__dealer-box__result">-</span></h5>
+                </div>
+            </div>
+            <div class="ch_5__field_2">
+                <div class="ch_5__field_2_buttons">
+                    <button class="btn btn-dark mr-2" id="blackjack-start-button">Start</button>
+                    <button class="btn btn-primary mr-2" id="blackjack-hit-button">Hit</button> 
+                    <button class="btn btn-info mr-2" id="blackjack-stand-button">Stand</button>
+                    <button class="btn btn-dark mr-2" id="blackjack-deal-button">Next</button>
+                </div>
+            </div>
+            <div class="ch_5__field_3">
+                <table id="ch_5__field__table">
+                    <tr>
+                        <th></th>
+                        <th>Wins</th>
+                        <th>Losses</th>
+                        <th>Draws</th>
+                    </tr>
+                    <tr>
+                        <td>#</td>
+                        <td>0</td>
+                        <td>0</td>
+                        <td>0</td>
+                    </tr>
+                    <tr>
+                        <td>rate</td>
+                        <td>0%</td>
+                        <td>0%</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    <footer>
+        <div>Made by <a href="https://github.com/YoheiKo">YoheiKo</a></div>
+    </footer>
+    <script src="static_black/js/script.js"></script>
+</body>
+</html>

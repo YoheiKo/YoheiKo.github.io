@@ -1,0 +1,118 @@
+body {
+    height: 100%;
+    min-height: 100%;
+}
+
+.main {
+    font-family: 'Haas Grot Text R Web', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    height: 100%;
+    padding-top: 12px;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #F9F8FD
+}
+
+
+.main__ch_5 {
+    width: 85%;
+    margin: 8px auto;
+    height: 100%;
+    padding: 16px;
+    text-align: center;
+}
+
+#main__ch_5__title {
+    font-weight: 600;
+}
+
+.ch_5__field , .ch_5__field_2, .ch_5__field_3{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 4px auto;
+    padding: 4px;
+}
+
+
+.ch_5__field {
+    background-color: #32979C;/*rgba(11,102,35,1); */
+    border: 2px solid white;
+    border-radius: 3%;
+    box-shadow: 0 0 3px 0 rgba(0,0,0,.12), 0 2px 3px 0 rgba(0,0,0,.22);
+    color: white;
+}
+
+.ch_5__field div {
+    flex: 1; /*equal amount of priority */
+    padding: 16px;
+    min-height: 196px;
+    height:60%;
+    text-align: center;
+}
+
+
+.ch_5__field_2 div  {
+    padding: 8px;
+}
+
+
+.ch_5__field_2 div button {
+    width: 72px;
+    height: 36px;
+    margin: 4px;
+}
+
+#ch_5__field__your-box img {
+    width: 40%;
+    max-width: 108px;
+    margin: 4px;
+}
+
+#ch_5__field__dealer-box img {
+    width: 40%;
+    max-width: 108px;
+    margin: 4px;
+}
+
+table {
+    margin: 4px;
+    border-top: 0.5px solid lightgray;
+    border-bottom: 0.5px solid lightgray;
+    font-size:0.9em;
+}
+
+tr  {
+    width: 96px;
+    padding: 4px;
+    text-align: center;
+    border-bottom: 0.5px solid lightgray;
+}
+
+
+td  {
+    width: 96px;
+    padding: 4px;
+    text-align: center;
+}
+
+
+footer {
+    min-height: 36px;
+    height: 15%;
+    width: 100%;
+    clear: both;
+    position: relative;
+    padding-top: 36px;
+    margin-top: -36px;
+    background-color: #F9F8FD;
+    color: #929eaa;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
