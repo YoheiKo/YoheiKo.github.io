@@ -51,7 +51,7 @@ body {
     flex: 1; /*equal amount of priority */
     padding: 16px;
     min-height: 125px;
-    height:100%;
+    height:60%;
     text-align: center;
 }
 
