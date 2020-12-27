@@ -202,7 +202,7 @@ let cardOnHand = (card,activePlayer) => {
 }
 
 let blackjackHit = () => {
-    if (blackjackGame.delivered === true) {
+    if (blackjackGame.delivered === true && blackjackGame.stand === false) {
             if (YOU.score === 21) {
                 alert("You marked 21! Do not hit anymore.");
             } else {
@@ -216,7 +216,11 @@ let blackjackHit = () => {
             showScore(YOU);
             } 
         } else {
-            alert("Push start to begin");
+            if (blackjackGame.delivered === false && blackjackGame.stand === false){
+                alert("Press start to begin");
+            } else if (blackjackGame.delivered === true && blackjackGame.stand === true){
+                alert("Press Next for the next game");
+            }
         }
 }
 
