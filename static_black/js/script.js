@@ -81,7 +81,7 @@ async function deliverCard(){
     cardOnHand(card,YOU);
     showScore(YOU);
     removeItemOnce(CARDS, card);
-    await sleep(300);
+    await sleep(0);
 
     card = randomCard(CARDS.length);
     //showCard(card, DEALER);
@@ -90,7 +90,7 @@ async function deliverCard(){
     cardOnHand(card,DEALER);
     //showScore(DEALER);
     removeItemOnce(CARDS, card);
-    await sleep(300);
+    await sleep(0);
     
 
     card = randomCard(CARDS.length);
@@ -99,7 +99,7 @@ async function deliverCard(){
     showScore(YOU);
     cardOnHand(card,YOU);
     removeItemOnce(CARDS, card);
-    await sleep(300);
+    await sleep(0);
 
     card = randomCard(CARDS.length);
     showCard(card, DEALER);
