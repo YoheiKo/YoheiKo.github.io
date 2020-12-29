@@ -69,8 +69,11 @@ let deliverCard_broken = () => {
     blackjackHit();
 }
 
+let sleep = (ms) => {
+    return new Promise(resolve => setTimeout(resolve, ms));
+}
 
-let deliverCard = () => {
+async function deliverCard(){
     if (blackjackGame['delivered'] === false){
     let card = randomCard(CARDS.length);
     showCard(card, YOU);
@@ -78,6 +81,7 @@ let deliverCard = () => {
     cardOnHand(card,YOU);
     showScore(YOU);
     removeItemOnce(CARDS, card);
+    await sleep(300);
 
     card = randomCard(CARDS.length);
     //showCard(card, DEALER);
@@ -86,6 +90,8 @@ let deliverCard = () => {
     cardOnHand(card,DEALER);
     //showScore(DEALER);
     removeItemOnce(CARDS, card);
+    await sleep(300);
+    
 
     card = randomCard(CARDS.length);
     showCard(card, YOU);
@@ -93,6 +99,7 @@ let deliverCard = () => {
     showScore(YOU);
     cardOnHand(card,YOU);
     removeItemOnce(CARDS, card);
+    await sleep(300);
 
     card = randomCard(CARDS.length);
     showCard(card, DEALER);
@@ -243,7 +250,7 @@ let hideDownCard = (activePlayer) => {
 
 }
 
-let showDealerDownCard = () => {
+let showDealerDownCard = () =>{
     if (blackjackGame.delivered === true && blackjackGame.stand === false){
     let dealerImages = document.querySelector('#ch_5__field__dealer-box').querySelectorAll('img');
     dealerImages[0].remove();
@@ -269,7 +276,7 @@ let showDealerDownCard = () => {
 
 }
 
-let seventeen = (activePlayer) => {
+let seventeen = (activePlayer) =>{
     if (activePlayer.score <= 16){
         while (activePlayer.score <= 17) {
             card = randomCard(CARDS.length);
