@@ -250,6 +250,12 @@ let hideDownCard = (activePlayer) => {
 
 }
 
+async function standAndNext() {
+    showDealerDownCard();
+    await sleep(785);
+    blackjackDeal();
+}
+
 let showDealerDownCard = () =>{
     if (blackjackGame.delivered === true && blackjackGame.stand === false){
     let dealerImages = document.querySelector('#ch_5__field__dealer-box').querySelectorAll('img');
@@ -411,7 +417,25 @@ let blackjackDeal = () => {
     }
 }
 
+let blackjackEnd = () => {
+    document.querySelector('#disapear_2').remove();
+    document.querySelector('#disapear_3').remove();
+    document.querySelector("#ch5_blackjack-result").textContent = "Thank you for playing the game. Your final score is:";
+    document.querySelector("#ch5_blackjack-result-h5").style.margin = "30px";
+    // let endButton = document.createElement('button');
+    // endButton.innerText = "Replay"
+    // endButton.class = "btn btn-primary mr-2"
+    // endButton.onclick = "location.href='https://yoheiko.github.io/blackjack'"
+    // document.querySelector('.ch_5__field_3').appendChild(endButton);
+    let replayLink = document.createElement('a');
+    replayLink.innerText = "Replay the game";
+    replayLink.href = "https://yoheiko.github.io/blackjack";
+    document.querySelector(".ch_5__field_3__fotter").appendChild(replayLink);
+
+}
+
 document.querySelector('#blackjack-start-button').addEventListener('click', deliverCard);
-document.querySelector('#blackjack-stand-button').addEventListener('click', showDealerDownCard);
+// document.querySelector('#blackjack-stand-button').addEventListener('click', showDealerDownCard);
+document.querySelector('#blackjack-stand-button').addEventListener('click', standAndNext);
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
-document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
+document.querySelector('#blackjack-end-button').addEventListener('click', blackjackEnd);
