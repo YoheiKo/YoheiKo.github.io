@@ -34,6 +34,7 @@ let blackjackGame = {
     'firstTime':true,
     'delivered':false,
     'stand':false,
+    'endGame':false
     
     
     }                 
@@ -74,46 +75,51 @@ let sleep = (ms) => {
 }
 
 async function deliverCard(){
-    if (blackjackGame['delivered'] === false){
-    let card = randomCard(CARDS.length);
-    showCard(card, YOU);
-    updateScore(card,YOU);
-    cardOnHand(card,YOU);
-    showScore(YOU);
-    removeItemOnce(CARDS, card);
-    await sleep(0);
-
-    card = randomCard(CARDS.length);
-    //showCard(card, DEALER);
-    hideDownCard(DEALER);
-    updateScore(card,DEALER);
-    cardOnHand(card,DEALER);
-    //showScore(DEALER);
-    removeItemOnce(CARDS, card);
-    await sleep(0);
-    
-
-    card = randomCard(CARDS.length);
-    showCard(card, YOU);
-    updateScore(card,YOU);
-    showScore(YOU);
-    cardOnHand(card,YOU);
-    removeItemOnce(CARDS, card);
-    await sleep(0);
-
-    card = randomCard(CARDS.length);
-    showCard(card, DEALER);
-    updateScore(card,DEALER);
-    cardOnHand(card,DEALER);
-    //showScore(DEALER);
-    removeItemOnce(CARDS, card);
-    
-    if (blackjackGame.firstTime === true){
-    removeStart();
-    blackjackGame.firstTime = false;    
+    if (blackjackGame.endGame === true) {
+        alert("This game is over. Press 'Reset and replay' at the bottom for the next game")
+        return;
     }
 
-    blackjackGame['delivered'] = true;
+    else if (blackjackGame['delivered'] === false){
+        let card = randomCard(CARDS.length);
+        showCard(card, YOU);
+        updateScore(card,YOU);
+        cardOnHand(card,YOU);
+        showScore(YOU);
+        removeItemOnce(CARDS, card);
+        await sleep(0);
+
+        card = randomCard(CARDS.length);
+        //showCard(card, DEALER);
+        hideDownCard(DEALER);
+        updateScore(card,DEALER);
+        cardOnHand(card,DEALER);
+        //showScore(DEALER);
+        removeItemOnce(CARDS, card);
+        await sleep(0);
+        
+
+        card = randomCard(CARDS.length);
+        showCard(card, YOU);
+        updateScore(card,YOU);
+        showScore(YOU);
+        cardOnHand(card,YOU);
+        removeItemOnce(CARDS, card);
+        await sleep(0);
+
+        card = randomCard(CARDS.length);
+        showCard(card, DEALER);
+        updateScore(card,DEALER);
+        cardOnHand(card,DEALER);
+        //showScore(DEALER);
+        removeItemOnce(CARDS, card);
+        
+        if (blackjackGame.firstTime === true){
+            removeStart();
+            blackjackGame.firstTime = false;    
+            }
+
+        blackjackGame['delivered'] = true;
     }
 
 }
@@ -209,7 +215,11 @@ let cardOnHand = (card,activePlayer) => {
 }
 
 let blackjackHit = () => {
-    if (blackjackGame.delivered === true && blackjackGame.stand === false) {
+    if (blackjackGame.endGame === true) {
+        alert("Press 'Reset and replay' at the bottom for the next game");
+        return;
+    }
+    else if (blackjackGame.delivered === true && blackjackGame.stand === false) {
             if (YOU.score === 21) {
                 alert("You marked 21! Do not hit anymore.");
             } else {
@@ -248,6 +258,16 @@ let hideDownCard = (activePlayer) => {
         HitSound.play();
     }
 
+}
+
+async function standAndNext() {
+    if (blackjackGame.endGame === true) {
+        alert("Press 'Reset and replay' at the bottom for the next game");
+        return;
+    }
+    showDealerDownCard();
+    await sleep(755);
+    blackjackDeal();
 }
 
 let showDealerDownCard = () =>{
@@ -411,7 +431,80 @@ let blackjackDeal = () => {
     }
 }
 
+// Not used
+let blackjackEnd = () => {
+    document.querySelector('#end_2').remove();
+    document.querySelector('#end_3').remove();
+    document.querySelector("#ch5_blackjack-result").textContent = "Thank you for playing the game. Your final score is:";
+    document.querySelector("#ch5_blackjack-result-h5").style.margin = "30px";
+    // let endButton = document.createElement('button');
+    // endButton.innerText = "Replay"
+    // endButton.class = "btn btn-primary mr-2"
+    // endButton.onclick = "location.href='https://yoheiko.github.io/blackjack'"
+    // document.querySelector('.ch_5__field_3').appendChild(endButton);
+    let replayLink = document.createElement('a');
+    replayLink.innerText = "Replay the game";
+    replayLink.href = "https://yoheiko.github.io/blackjack";
+    document.querySelector(".ch_5__field_3__fotter").appendChild(replayLink);
+}
+
+let blackjackEndSecond = () => {
+    if (blackjackGame.endGame === true) {
+        alert("See you again");
+        return;
+    }
+
+    else if (blackjackGame.endGame === false){
+    document.querySelector("#ch5_blackjack-result").textContent = "Thank you for playing the game.";
+
+    // Remove card images
+    let yourImages = document.querySelector('#ch_5__field__your-box').querySelectorAll('img');
+    let dealerImages = document.querySelector('#ch_5__field__dealer-box').querySelectorAll('img');
+    for (let i=0; i < yourImages.length; i++){
+        yourImages[i].remove();
+    }
+    for (let i=0; i < dealerImages.length; i++){
+        dealerImages[i].remove();
+    }
+
+    // Add ending cards to the end
+    let redCardImage = document.createElement('img');
+    redCardImage.src = 'static_black/images/52_images/cards_png_zip/PNG/others/red_back.png';
+    
+    let redCardImage_2 = document.createElement('img');
+    redCardImage_2.src = 'static_black/images/52_images/cards_png_zip/PNG/others/red_back.png';
+    
+    let redCardImage_3 = document.createElement('img');
+    redCardImage_3.src = 'static_black/images/52_images/cards_png_zip/PNG/others/red_back.png';
+    
+    let redCardImage_4 = document.createElement('img');
+    redCardImage_4.src = 'static_black/images/52_images/cards_png_zip/PNG/others/red_back.png';
+    
+    
+    document.querySelector(YOU.div).appendChild(redCardImage);
+    document.querySelector(YOU.div).appendChild(redCardImage_2);
+    document.querySelector(DEALER.div).appendChild(redCardImage_3);
+    document.querySelector(DEALER.div).appendChild(redCardImage_4);
+    HitSound.play();
+
+    // Change the score 
+    document.querySelector('#ch_5__field__your-box__result').innerText = "-"
+
+    // Add replay link to the end  
+    let replayLink = document.createElement('a');
+    replayLink.innerText = "Reset and replay";
+    replayLink.href = "https://yoheiko.github.io/blackjack";
+    document.querySelector(".ch_5__field_3__fotter").appendChild(replayLink);
+    
+    // set status
+    blackjackGame.endGame = true;
+    blackjackGame.delivered = true;
+    blackjackGame.stand = true;
+    }
+}
+
 document.querySelector('#blackjack-start-button').addEventListener('click', deliverCard);
-document.querySelector('#blackjack-stand-button').addEventListener('click', showDealerDownCard);
+// document.querySelector('#blackjack-stand-button').addEventListener('click', showDealerDownCard);
+document.querySelector('#blackjack-stand-button').addEventListener('click', standAndNext);
 document.querySelector('#blackjack-hit-button').addEventListener('click', blackjackHit);
-document.querySelector('#blackjack-deal-button').addEventListener('click', blackjackDeal);
+document.querySelector('#blackjack-end-button').addEventListener('click', blackjackEndSecond);
