@@ -9,12 +9,12 @@ url:
 <h4>Covid-19 Tracker</h4>
 This webapp shows the global Covid cases, recovered, and deaths by country. You can also see the overview of them in a world map or a historical trend of them by country. The key technologies used in this webapp is React, Material-UI, and Chart.js. This webapp is hosted in Firebase.<br>
 url:
-<a href="https://covid-19-tracker-59108.web.app/">Blackjack Game</a>
+<a href="https://covid-19-tracker-59108.web.app/">Covid-19 Tracker</a>
 <br>
 <h4>FIRE Calculator</h4>
 By this webapp you can easily compute the forward value of today's investment. It can also computes the result of monthly investments. The key technologies used in this app are Next.js, Material-UI, and Styled-components. It is hosted on vercel.<br>
 url:
-<a href="https://annuity.vercel.app/about">Blackjack Game</a>
+<a href="https://annuity.vercel.app/about">FIRE Calculator</a>
 <br>
 <hr>
 <h3>Contact</h3>
