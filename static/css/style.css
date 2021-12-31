@@ -38,7 +38,7 @@ body {
 
 .main__ch_5__title__div_el:hover {
    color: #808080
-   border-bottom: 1px solid whitesmoke;
+   border-bottom: 1px solid rgba(0,0,0,0.1);
    width: 100%;
 }
 
