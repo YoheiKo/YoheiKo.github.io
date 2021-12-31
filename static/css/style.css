@@ -31,7 +31,10 @@ body {
 }
 
 .main__ch_5__title__div_el {
-    color: black;
+    color: #5a5a5a;
+    text-decoration: none;
+    font-weight: 500;
+    
 }
 
 
