@@ -34,12 +34,6 @@ body {
     color: #5a5a5a;
     text-decoration: none !important;
     font-weight: 500;
-    display: inline-block;
-    transition: all 2s ease-in-out;
-    border-bottom: 2px solid transparent;
-    position: relative;
-    margin: 0 auto;
-    width: 0%;
 }
 
 .main__ch_5__title__div_el:hover {
