@@ -16,6 +16,11 @@ By this webapp you can easily compute the forward value of today's investment. I
 url:
 <a href="https://annuity.vercel.app/about">FIRE Calculator</a>
 <br>
+<h4>Github FInder</h4>
+This app can search github users and show the profile and repos of a selected user. It is hosted on vercel.<br>
+url:
+<a href="https://annuity.vercel.app/about">FIRE Calculator</a>
+<br>
 <hr>
 <h3>Contact</h3>
 
